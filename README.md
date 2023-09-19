@@ -51,7 +51,7 @@ Our DCPA could be extended to other datasets with some modifications.
 ## Usage
 1. Clone the repo.;
 ```
-git clone https://github.com/ycwu1997/MC-Net.git
+git clone https://github.com/BinYCn/DCPA.git
 ```
 2. Put the data in './DCPA/data';
 
@@ -59,11 +59,17 @@ git clone https://github.com/ycwu1997/MC-Net.git
 ```
 cd DCPA
 # e.g., for 20% labels on LA
-python ./code/train_mcnet_3d.py --dataset_name LA --model mcnet3d_v2 --labelnum 16 --gpu 0 --temperature 0.1
+python ./code/train_3d.py --dataset_name LA --labelnum 16 --gpu 0
 ```
 4. Test the model;
 ```
 cd DCPA
 # e.g., for 20% labels on LA
-python ./code/test_3d.py --dataset_name LA --model mcnet3d_v2 --exp MCNet --labelnum 16 --gpu 0
+python ./code/test_3d.py --dataset_name LA --exp DCPA3d --labelnum 16 --gpu 0
 ```
+
+## Acknowledgements:
+Our code is adapted from [UAMT](https://github.com/yulequan/UA-MT), [SASSNet](https://github.com/kleinzcy/SASSnet), [DTC](https://github.com/HiLab-git/DTC), [URPC](https://github.com/HiLab-git/SSL4MIS), [SSL4MIS](https://github.com/HiLab-git/SSL4MIS) and [MC-Net](https://github.com/ycwu1997/MC-Net.git). Thanks for these authors for their valuable works and hope our model can promote the relevant research as well.
+
+## Questions
+If any questions, feel free to contact me at 'binycn904363330@gmail.com'
