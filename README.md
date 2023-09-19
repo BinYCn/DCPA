@@ -53,7 +53,7 @@ Our DCPA could be extended to other datasets with some modifications.
 ```
 git clone https://github.com/BinYCn/DCPA.git
 ```
-2. Put the data in './DCPA/data';
+2. Put the data in `./DCPA/data`;
 
 3. Train the model;
 ```
