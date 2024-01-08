@@ -50,9 +50,9 @@ parser.add_argument('--consistency', type=float,
 parser.add_argument('--consistency_rampup', type=float,
                     default=40.0, help='consistency_rampup')
 parser.add_argument('--temperature', type=float, default=0.1, help='temperature of sharpening')
-parser.add_argument('--devicenum', default='0', type=str, )
+parser.add_argument('--gpu', default='0', type=str, )
 args = parser.parse_args()
-os.environ['CUDA_VISIBLE_DEVICES'] = args.devicenum
+os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
 
 
 num_classes = 2
