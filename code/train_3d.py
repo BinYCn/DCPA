@@ -14,7 +14,7 @@ from tqdm import tqdm
 from networks.net_factory_3d import net_factory_3d
 from dataloaders.dataset import *
 from utils import losses, ramps, test_patch
-from utils.PLGDA import PLGDA_3D
+from utils.mix import Mix_3D
 
 
 parser = argparse.ArgumentParser()
@@ -181,7 +181,7 @@ def train(args, snapshot_path):
 
             X = list(zip(l_image, l_label))
             U = unlabeled_volume_batch
-            X_prime, U_prime, pseudo_label = PLGDA_3D(X, U, eval_net=ema_model, K=2, T=args.temperature, alpha=0.75, mixup_mode='_x',
+            X_prime, U_prime, pseudo_label = Mix_3D(X, U, eval_net=ema_model, K=2, T=args.temperature, alpha=0.75, mixup_mode='_x',
                                                        aug_factor=1)
 
             model.train()
