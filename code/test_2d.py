@@ -26,7 +26,7 @@ parser.add_argument('--num_classes', type=int,  default=4,
                     help='output channel of network')
 parser.add_argument('--labelnum', type=int, default=3,
                     help='labeled data')
-parser.add_argument('--devicenum', default='0', type=str)
+parser.add_argument('--gpu', default='0', type=str)
 
 
 def calculate_metric_percase(pred, gt):
@@ -120,7 +120,7 @@ def Inference(FLAGS):
 
 if __name__ == '__main__':
     FLAGS = parser.parse_args()
-    os.environ['CUDA_VISIBLE_DEVICES'] = FLAGS.devicenum
+    os.environ['CUDA_VISIBLE_DEVICES'] = FLAGS.gpu
     metric = Inference(FLAGS)
     print(metric)
     print((metric[0]+metric[1]+metric[2])/3)
