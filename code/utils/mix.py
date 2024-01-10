@@ -9,7 +9,7 @@ def augmentation(volume, aug_factor):
     return volume + aug_factor * np.clip(np.random.randn(*volume.shape) * 0.1, -0.2, 0.2).astype(np.float32)
 
 
-def PLGDA_2D(X, U, eval_net, K, T, alpha, mixup_mode, aug_factor):
+def Mix_2D(X, U, eval_net, K, T, alpha, mixup_mode, aug_factor):
 
     X_b = len(X)
     X_cap = [(augmentation(x[0], aug_factor), x[1]) for x in X]
@@ -57,7 +57,7 @@ def PLGDA_2D(X, U, eval_net, K, T, alpha, mixup_mode, aug_factor):
     return X_prime, U_prime, pseudo_label
 
 
-def PLGDA_3D(X, U, eval_net, K, T, alpha, mixup_mode, aug_factor):
+def Mix_3D(X, U, eval_net, K, T, alpha, mixup_mode, aug_factor):
 
     X_b = len(X)
     X_cap = [(augmentation(x[0], aug_factor), x[1]) for x in X]
