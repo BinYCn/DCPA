@@ -15,7 +15,7 @@ from torch.nn.modules.loss import CrossEntropyLoss
 from torch.utils.data import DataLoader
 from torchvision import transforms
 from tqdm import tqdm
-from utils.PLGDA import PLGDA_2D
+from utils.mix import Mix_2D
 from utils import test_patch
 from dataloaders.dataset import BaseDataSets, RandomGenerator, TwoStreamBatchSampler
 from utils import losses, ramps
@@ -199,7 +199,7 @@ def train(args, snapshot_path):
             X = list(zip(l_image, l_label))
             U = unlabeled_volume_batch
 
-            X_prime, U_prime, pseudo_label = PLGDA_2D(X, U, eval_net=ema_model, K=2, T=args.temperature, alpha=0.75,
+            X_prime, U_prime, pseudo_label = Mix_2D(X, U, eval_net=ema_model, K=2, T=args.temperature, alpha=0.75,
                                                        mixup_mode='_x', aug_factor=1)
             model.train()
             X_data = torch.from_numpy(np.array([x[0] for x in X_prime]))
