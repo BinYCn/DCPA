@@ -24,7 +24,7 @@ parser.add_argument('--model', type=str,
                     default='DCPA2d', help='model_name')
 parser.add_argument('--num_classes', type=int,  default=4,
                     help='output channel of network')
-parser.add_argument('--labelnum', type=int, default=3,
+parser.add_argument('--labeled_num', type=int, default=3,
                     help='labeled data')
 parser.add_argument('--gpu', default='0', type=str)
 
@@ -85,9 +85,9 @@ def Inference(FLAGS):
     image_list = sorted([item.replace('\n', '').split(".")[0]
                          for item in image_list])
     snapshot_path = "../model/{}_{}_{}_labeled/{}".format(FLAGS.dataset_name, FLAGS.exp,
-                                                          FLAGS.labelnum, FLAGS.model)
+                                                          FLAGS.labeled_num, FLAGS.model)
     test_save_path = "../model/{}_{}_{}_labeled/{}_predictions/".format(FLAGS.dataset_name, FLAGS.exp,
-                                                                        FLAGS.labelnum, FLAGS.model)
+                                                                        FLAGS.labeled_num, FLAGS.model)
     if os.path.exists(test_save_path):
         shutil.rmtree(test_save_path)
     os.makedirs(test_save_path)
