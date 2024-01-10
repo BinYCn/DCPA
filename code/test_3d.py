@@ -14,15 +14,15 @@ parser.add_argument('--exp', type=str, default='DCPA3d', help='exp_name')
 parser.add_argument('--model', type=str, default='DCPA3d', help='model_name')
 parser.add_argument('--gpu', type=str, default='0', help='GPU to use')
 parser.add_argument('--detail', type=int, default=False, help='print metrics for every samples?')
-parser.add_argument('--labelnum', type=int, default=4, help='labeled data')
+parser.add_argument('--labeled_num', type=int, default=4, help='labeled data')
 parser.add_argument('--nms', type=int, default=0, help='apply NMS post-procssing?')
 
 FLAGS = parser.parse_args()
 os.environ['CUDA_VISIBLE_DEVICES'] = FLAGS.gpu
 snapshot_path = FLAGS.root_path + "model/{}_{}_{}_labeled/{}".format(FLAGS.dataset_name, FLAGS.exp,
-                                                                     FLAGS.labelnum, FLAGS.model)
+                                                                     FLAGS.labeled_num, FLAGS.model)
 test_save_path = FLAGS.root_path + "model/{}_{}_{}_labeled/{}_predictions/".format(FLAGS.dataset_name, FLAGS.exp,
-                                                                                   FLAGS.labelnum, FLAGS.model)
+                                                                                   FLAGS.labeled_num, FLAGS.model)
 
 num_classes = 2
 if FLAGS.dataset_name == "LA":
