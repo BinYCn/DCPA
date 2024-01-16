@@ -4,7 +4,7 @@ Official implementation of *Dual-Decoder Consistency via Pseudo-Labels Guided Da
 
 **Authors:**  
 
-> Yuanbin Chen, Tao Wang, Hui Tang, Longxuan Zhao, Ruige Zong, Tao Tan, Xinlin Zhang, Tong Tong
+> Yuanbin Chen, Tao Wang, Hui Tang, Longxuan Zhao, Ruige Zong, Shun Chen, Tao Tan, Xinlin Zhang, Tong Tong
 
 manuscript link:  
 
