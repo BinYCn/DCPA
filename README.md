@@ -59,13 +59,13 @@ git clone https://github.com/BinYCn/DCPA.git
 ```
 cd DCPA
 # e.g., for 20% labels on LA
-python ./code/train_3d.py --dataset_name LA --labelnum 16 --gpu 0
+python ./code/train_3d.py --dataset_name LA --labeled_num 16 --gpu 0
 ```
 4. Test the model;
 ```
 cd DCPA
 # e.g., for 20% labels on LA
-python ./code/test_3d.py --dataset_name LA --exp DCPA3d --labelnum 16 --gpu 0
+python ./code/test_3d.py --dataset_name LA --exp DCPA3d --labeled_num 16 --gpu 0
 ```
 
 ## Acknowledgements:
